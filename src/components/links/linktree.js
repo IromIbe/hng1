@@ -6,13 +6,22 @@ function LinkTree() {
     <div className='main flex flex-col justify-center items-center md:pb-32 sm:pb-24 pb-20'>
       <div className=' relative py-5  w-full'>
         <div className='profile flex flex-col justify-center items-center'>
-          <img
-            src='/irom.svg'
-            alt=''
-            id='profile__img'
-            className='rounded-[50%] mb-3 hover:bg-blend-overlay'
-          />
-          <span id='twitter' className='text-[20px] font-bold leading-8'>
+          <div className='profile-img relative w-[88px] h-[88px]'>
+            <img
+              src='/irom.svg'
+              alt='profile_pic'
+              id='profile__img'
+              className='block rounded-[50%] mb-4 w-full h-full hover:bg-blend-overlay peer'
+            />
+            <div className='rounded-[50%] w-full flex flex-col justify-end items-center h-full bg-[#34405475] transition-opacity absolute top-0 bottom-0 left-0 right-0 opacity-0 hover:opacity-100'>
+              <img src='/cam.svg' alt='' className='mb-1' />
+            </div>
+          </div>
+
+          <span
+            id='twitter'
+            className='xsm:text-[20px] text-lg font-bold leading-8'
+          >
             Asan
           </span>
           <span id='slack' className='hidden'>
@@ -23,14 +32,14 @@ function LinkTree() {
         <div className='share absolute top-0 sm:right-[10%] md:right-[20%] sm:block hidden'>
           <img
             src='/share.svg'
-            alt=''
+            alt='share_icon'
             className='p-[10px] border-[2px] border-dotted border-gray-300 rounded-[50%] hover:bg-[#F9FAFB]'
           />
         </div>
         <div className='share absolute top-0 right-[4%] sm:hidden block'>
           <img
             src='/dots.svg'
-            alt=''
+            alt='share_mobile'
             className='p-[10px] border-[2px] border-dotted border-gray-300 rounded-[50%] hover:bg-[#F9FAFB]'
           />
         </div>
@@ -48,10 +57,10 @@ function LinkTree() {
       </div>
       <div className='social flex mt-1 px-4'>
         <a href='' className='mx-2'>
-          <img src='/slack.svg' alt='' />
+          <img src='/slack.svg' alt='slack_icon' />
         </a>
         <a href='hub.com/iromIbe' className='mx-2'>
-          <img src='/git.svg' alt='' />
+          <img src='/git.svg' alt='github_icon' />
         </a>
       </div>
     </div>
