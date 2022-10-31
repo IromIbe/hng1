@@ -2,7 +2,7 @@ const linkData = [
   {
     name: "Twitter Link",
     linkTo: "https://twitter.com/@irommy",
-    id: "twitter",
+    id: "twitter__link",
     title: "",
   },
   {
@@ -36,7 +36,7 @@ const linkData = [
     linkTo: "https://books.zuri.team/design-rules",
     id: "book__design",
     title:
-      "This is a free design book offered by Zuri to enhance your design patterns, Click to grab your copy now!",
+      "This is a free design book offered by Zuri to enhance your design patterns.",
   },
 ];
 
