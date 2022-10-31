@@ -31,6 +31,7 @@ function LinkTree() {
 
         <div className='share absolute top-0 sm:right-[10%] md:right-[20%] sm:block hidden'>
           <img
+            title='Share Link'
             src='/share.svg'
             alt='share_icon'
             className='p-[10px] border-[2px] border-dotted border-gray-300 rounded-[50%] hover:bg-[#F9FAFB]'
@@ -38,6 +39,7 @@ function LinkTree() {
         </div>
         <div className='share absolute top-0 right-[2%] sm:hidden block'>
           <img
+            title='Share Link'
             src='/dots.svg'
             alt='share_mobile'
             className='p-[10px] border-[2px] border-dotted border-gray-300 rounded-[50%] hover:bg-[#F9FAFB]'
@@ -50,6 +52,7 @@ function LinkTree() {
             href={link.linkTo}
             id={link.id}
             className='block w-full text-center text-[#101828] font-medium sm:text-lg xsm:text-base text-sm py-[20px] mb-5 bg-[#EAECF0] hover:bg-[#D0D5DD] rounded-lg border-1 border-[ #EAECF0]'
+            title={link.title}
           >
             {link.name}
           </a>
