@@ -25,7 +25,7 @@ function LinkTree() {
             Asan
           </span>
           <span id='slack' className='hidden'>
-            Irommy
+            {/* Irommy */}
           </span>
         </div>
 
