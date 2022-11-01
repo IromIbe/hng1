@@ -18,15 +18,15 @@ function LinkTree() {
             </div>
           </div>
 
-          <span
+          <h4
             id='twitter'
             className='xsm:text-[20px] text-lg font-bold leading-8'
           >
             _irommy
-          </span>
-          <span id='slack' className='hidden'>
+          </h4>
+          <h4 id='slack' className='hidden'>
             Irommy
-          </span>
+          </h4>
         </div>
 
         <div className='share absolute top-0 sm:right-[10%] md:right-[20%] sm:block hidden'>
@@ -49,6 +49,7 @@ function LinkTree() {
       <div className='links md:px-16 sm:px-12 xsm:px-2 px-2 w-full mt-5'>
         {linkData.map((link) => (
           <a
+            key={link.id}
             href={link.linkTo}
             id={link.id}
             className='block w-full text-center text-[#101828] font-medium sm:text-lg xsm:text-base text-sm py-[20px] mb-5 bg-[#EAECF0] hover:bg-[#D0D5DD] rounded-lg border-1 border-[ #EAECF0]'
