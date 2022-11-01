@@ -22,10 +22,10 @@ function LinkTree() {
             id='twitter'
             className='xsm:text-[20px] text-lg font-bold leading-8'
           >
-            Asan
+            _irommy
           </span>
           <span id='slack' className='hidden'>
-            {/* Irommy */}
+            Irommy
           </span>
         </div>
 
