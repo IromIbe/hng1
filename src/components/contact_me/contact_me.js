@@ -9,17 +9,36 @@ function ContactPg() {
     email: "",
     message: "",
   });
-
   const { firstName, lastName, email, message } = contactInfo;
 
+  const [contactError, setContactError] = useState({});
+
+  console.log(contactError, "contactError");
+
   const handleChange = (e) => {
-    const { value } = e.target;
-    const { name } = e.target;
+    const { value, name } = e.target;
     setContactInfo({ ...contactInfo, [name]: value });
   };
-
+  const validation = (values) => {
+    let errors = {};
+    console.log(values, "values");
+    if (!values.firstName) {
+      errors.firstName = "Please enter your first name";
+    }
+    if (!values.lastName) {
+      errors.lastName = "Please enter your last name";
+    }
+    if (!values.email) {
+      errors.email = "Please enter a valid email address";
+    }
+    if (!values.message) {
+      errors.message = "Please enter a message";
+    }
+    return errors;
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
+    setContactError(validation(contactInfo));
   };
 
   return (
@@ -34,7 +53,7 @@ function ContactPg() {
           </p>
         </div>
         <form action='' className='w-full pt-6 pb-32' onSubmit={handleSubmit}>
-          <div className='name flex xsm:flex-row xsm:gap-4 flex-col justify-between items-end'>
+          <div className='name flex xsm:flex-row xsm:gap-4 flex-col justify-between items-start'>
             <Input
               label='First name'
               placeholder='Enter your first name'
@@ -43,6 +62,7 @@ function ContactPg() {
               type='text'
               value={firstName}
               handleChange={handleChange}
+              error={contactError.firstName}
             />
 
             <Input
@@ -53,6 +73,7 @@ function ContactPg() {
               type='text'
               value={lastName}
               handleChange={handleChange}
+              error={contactError.lastName}
             />
           </div>
 
@@ -64,11 +85,12 @@ function ContactPg() {
             type='email'
             value={email}
             handleChange={handleChange}
+            error={contactError.email}
           />
 
           <label
             htmlFor='message'
-            className='w-full flex flex-col font-medium text-sm text-[#344054] py-[14px]'
+            className='w-full flex flex-col font-medium text-sm text-[#344054] pt-[14px]'
           >
             Message
             <textarea
@@ -78,10 +100,16 @@ function ContactPg() {
               rows='6'
               value={message}
               onChange={handleChange}
-              className='field'
+              className={`field ${contactError.message ? "error" : ""}`}
               placeholder="Send me a message and I'll reply you as soon as possible..."
             ></textarea>
+            {contactError.message && (
+              <span className='text-[#F83F23] font-normal  peer-invalid:block  text-[14px] mx-2 mt-2'>
+                {contactError.message}
+              </span>
+            )}
           </label>
+
           <div className='mt-2'>
             <input
               type='checkbox'
