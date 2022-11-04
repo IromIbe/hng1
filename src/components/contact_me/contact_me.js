@@ -119,7 +119,7 @@ function ContactPg() {
               className='border-1 border-[#D0D5DD] rounded-md'
             />
             <span className='ml-[5px] text-[#475467] text-[15px] font-normal'>
-              You agree to providing your data to ZURI who may contact you.
+              You agree to providing your data to Irommy who may contact you.
             </span>
           </div>
           <button
