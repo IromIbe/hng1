@@ -11,8 +11,6 @@ function Input({
   handleChange,
   error,
 }) {
-  console.log(error, "err");
-
   return (
     <>
       <label

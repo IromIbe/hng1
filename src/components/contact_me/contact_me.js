@@ -3,6 +3,7 @@ import "./contact_me.css";
 import Input from "./input";
 
 function ContactPg() {
+  // state managing contact information of the user
   const [contactInfo, setContactInfo] = useState({
     firstName: "",
     lastName: "",
@@ -11,31 +12,38 @@ function ContactPg() {
   });
   const { firstName, lastName, email, message } = contactInfo;
 
+  //  storing an error state for info given by user
   const [contactError, setContactError] = useState({});
 
-  console.log(contactError, "contactError");
-
+  // handling each input field change
   const handleChange = (e) => {
     const { value, name } = e.target;
     setContactInfo({ ...contactInfo, [name]: value });
   };
+
+  // function for validating input fields
   const validation = (values) => {
     let errors = {};
-    console.log(values, "values");
+    // checking for error in first_name input
     if (!values.firstName) {
       errors.firstName = "Please enter your first name";
     }
+    // checking for error in last_name input
     if (!values.lastName) {
       errors.lastName = "Please enter your last name";
     }
+    // checking for error in email input
     if (!values.email) {
       errors.email = "Please enter a valid email address";
     }
+    // checking for error in message textarea
     if (!values.message) {
       errors.message = "Please enter a message";
     }
     return errors;
   };
+
+  // controlling form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     setContactError(validation(contactInfo));
