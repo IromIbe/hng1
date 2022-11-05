@@ -29,7 +29,7 @@ function Input({
         />
 
         {error && (
-          <span className='text-[#F83F23] font-normal  text-[14px] mx-2 mt-2'>
+          <span className='text-[#F83F23] font-normal  text-[14px] mx-2 mt-1'>
             {error}
           </span>
         )}

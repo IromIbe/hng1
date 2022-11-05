@@ -112,7 +112,7 @@ function ContactPg() {
               placeholder="Send me a message and I'll reply you as soon as possible..."
             ></textarea>
             {contactError.message && (
-              <span className='text-[#F83F23] font-normal  peer-invalid:block  text-[14px] mx-2 mt-2'>
+              <span className='text-[#F83F23] font-normal  peer-invalid:block  text-[14px] mx-2 mt-1'>
                 {contactError.message}
               </span>
             )}
