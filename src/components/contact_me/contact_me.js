@@ -108,7 +108,9 @@ function ContactPg() {
               rows='6'
               value={message}
               onChange={handleChange}
-              className={`field ${contactError.message ? "error" : ""}`}
+              className={`field msg ${
+                contactError.message ? "error_msg error" : ""
+              }`}
               placeholder="Send me a message and I'll reply you as soon as possible..."
             ></textarea>
             {contactError.message && (
